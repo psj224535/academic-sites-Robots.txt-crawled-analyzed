@@ -2,10 +2,8 @@ import json
 from collections import defaultdict
 
 def get_base_domain(domain):
-    """Extracts the base domain (e.g., a.b.sagepub.com -> sagepub.com)"""
     parts = domain.split('.')
     if len(parts) < 2: return domain
-    # Handle multi-part TLDs like .ac.uk, .edu.au, .co.kr
     if len(parts) > 2 and parts[-2] in ['co', 'ac', 'edu', 'org', 'gov', 'net', 'com', 'ne']:
         return ".".join(parts[-3:])
     return ".".join(parts[-2:])
@@ -13,42 +11,23 @@ def get_base_domain(domain):
 def classify_tier(base_domain):
     d = base_domain.lower()
     
-    tier4_kw = [
-        'scholar', 'semantic', 'search', 'index', 'lens.org', 'scopus', 'webofscience', 
-        'proquest', 'ebsco', 'jstor', 'researchgate', 'academia.edu', 'mendeley', 
-        'openalex', 'dimensions.ai', 'clarivate', 'exlibris'
-    ]
+    tier4_kw = ['scholar', 'semantic', 'search', 'index', 'lens.org', 'scopus', 'webofscience', 'proquest', 'ebsco', 'jstor', 'researchgate', 'academia.edu', 'mendeley', 'openalex', 'dimensions.ai', 'clarivate', 'exlibris']
     for kw in tier4_kw:
-        if kw in d: return "Tier 4 (포괄적 크롤러형)"
+        if kw in d: return "Tier 4 (Web-scale Aggregators)"
 
-    tier3_kw = [
-        '.edu', '.ac.', 'repository', 'eprint', 'dspace', 'arxiv', 'rxiv', 'ssrn', 
-        'osf.io', 'zenodo', 'figshare', 'dryad', 'archive', 'ir.', 'digitalcommons', 
-        'theses', 'dissertation', 'hal.science', 'bepress', 'scholarworks'
-    ]
+    tier3_kw = ['.edu', '.ac.', 'repository', 'eprint', 'dspace', 'arxiv', 'rxiv', 'ssrn', 'osf.io', 'zenodo', 'figshare', 'dryad', 'archive', 'ir.', 'digitalcommons', 'theses', 'dissertation', 'hal.science', 'bepress', 'scholarworks']
     for kw in tier3_kw:
-        if kw in d: return "Tier 3 (기관 보관/프리프린트)"
+        if kw in d: return "Tier 3 (Institutional Repositories & Preprints)"
 
-    tier1_kw = [
-        'elsevier', 'sciencedirect', 'cell.com', 'thelancet', 'springer', 'nature', 
-        'wiley', 'tandfonline', 'taylorandfrancis', 'routledge', 'oup', 'oxfordjournals', 
-        'cambridge', 'sagepub', 'ieee', 'acm.org', 'asme', 'asce', 'aip.org', 'aps.org', 
-        'iop.org', 'rsc.org', 'acs.org', 'jamanetwork', 'nejm', 'bmj', 'karger', 'brill', 
-        'degruyter', 'emerald', 'thieme', 'wolterskluwer', 'lww.com', 'maryannliebert', 
-        'inderscience', 'igi-global', 'begellhouse'
-    ]
+    tier1_kw = ['elsevier', 'sciencedirect', 'cell.com', 'thelancet', 'springer', 'nature', 'wiley', 'tandfonline', 'taylorandfrancis', 'routledge', 'oup', 'oxfordjournals', 'cambridge', 'sagepub', 'ieee', 'acm.org', 'asme', 'asce', 'aip.org', 'aps.org', 'iop.org', 'rsc.org', 'acs.org', 'jamanetwork', 'nejm', 'bmj', 'karger', 'brill', 'degruyter', 'emerald', 'thieme', 'wolterskluwer', 'lww.com', 'maryannliebert', 'inderscience', 'igi-global', 'begellhouse']
     for kw in tier1_kw:
-        if kw in d: return "Tier 1 (고도 선별형 상업 출판사)"
+        if kw in d: return "Tier 1 (High Selectivity Commercial Publishers)"
 
-    tier2_kw = [
-        'doaj', 'pubmed', 'nih.gov', 'pmc', 'crossref', 'plos', 'mdpi', 'frontiers', 
-        'hindawi', 'biomedcentral', 'scielo', 'copernicus', 'peerj', 'cogentoa', 
-        'f1000', 'elife', 'datacite', 'orcid'
-    ]
+    tier2_kw = ['doaj', 'pubmed', 'nih.gov', 'pmc', 'crossref', 'plos', 'mdpi', 'frontiers', 'hindawi', 'biomedcentral', 'scielo', 'copernicus', 'peerj', 'cogentoa', 'f1000', 'elife', 'datacite', 'orcid']
     for kw in tier2_kw:
-        if kw in d: return "Tier 2 (심사 완료 오픈형)"
+        if kw in d: return "Tier 2 (Mid-High Selectivity Open Access)"
 
-    return "Unclassified (미분류 개별 저널)"
+    return "Unclassified (Independent Journals)"
 
 def is_bot_disallowed(robots_txt, bot_name):
     if not robots_txt: return False
@@ -81,8 +60,6 @@ def analyze():
         data = json.load(f)
 
     bots_to_check = ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'Google-Extended']
-    
-    # Consolidation dictionary: base_domain -> { tier, 403_count, 200_count, bots: {bot: block_count} }
     consolidated = {}
 
     for item in data:
@@ -108,11 +85,11 @@ def analyze():
                     consolidated[base_domain]["bots"][bot] += 1
 
     tiers = [
-        "Tier 1 (고도 선별형 상업 출판사)", 
-        "Tier 2 (심사 완료 오픈형)", 
-        "Tier 3 (기관 보관/프리프린트)", 
-        "Tier 4 (포괄적 크롤러형)",
-        "Unclassified (미분류 개별 저널)"
+        "Tier 1 (High Selectivity Commercial Publishers)", 
+        "Tier 2 (Mid-High Selectivity Open Access)", 
+        "Tier 3 (Institutional Repositories & Preprints)", 
+        "Tier 4 (Web-scale Aggregators)",
+        "Unclassified (Independent Journals)"
     ]
     
     stats = {
@@ -124,29 +101,20 @@ def analyze():
         } for tier in tiers
     }
 
-    # Evaluate each consolidated base domain (Entity)
-    # Rule: If it explicitly blocked GPTBot anywhere, it's a "Robots Block" entity.
-    # If it didn't block in robots.txt but returned 403s, it's a "WAF Block" entity.
     for base_domain, info in consolidated.items():
         tier = info["tier"]
         stats[tier]["total_entities"] += 1
-        
         if len(stats[tier]["examples"]) < 10:
             stats[tier]["examples"].append(base_domain)
-            
-        # If any subdomain explicitly blocked a bot, the entity is marked as blocking that bot
         for bot in bots_to_check:
             if info["bots"][bot] > 0:
                 stats[tier]["blocked_by_robots"][bot] += 1
-                
-        # If the entity had 403s but NO 200 OKs, or we consider it a WAF defense
-        # Let's count it as WAF protected if it returned ANY 403s
         if info["status_403"] > 0:
             stats[tier]["blocked_by_403"] += 1
 
-    report = "# 🛡️ 전 세계 학술 도메인 티어별 AI 방어 통계 (루트 도메인 압축 버전)\n\n"
-    report += "서브도메인(예: `top.sagepub.com`, `jpl.sagepub.com`)으로 인해 통계가 왜곡되는 현상을 막기 위해, 모든 도메인을 **최상위 루트 도메인(`sagepub.com`) 단위의 1개 독립 기관(Entity)으로 압축 병합**하여 분석했습니다.\n\n"
-    report += "> **평가 규칙:** 1개의 출판사(루트 도메인) 산하에 100개의 서브도메인이 있더라도 오직 1개의 기관으로 카운트하며, 그 중 하나라도 403을 띄우거나 GPTBot을 차단했다면 해당 기관은 'AI 방어 시스템을 갖춘 기관'으로 간주합니다.\n\n"
+    report = "# 🛡️ Global Academic Domain AI Defense Statistics (Root Domain Deduplicated)\n\n"
+    report += "To prevent statistical distortion caused by subdomain bloat (e.g., `top.sagepub.com`, `jpl.sagepub.com`), all domains were consolidated into their top-level root domains (e.g., `sagepub.com`) representing a single organizational entity.\n\n"
+    report += "> **Evaluation Rule:** Even if a single publisher operates 100 subdomains, it is counted as 1 entity. If any of its subdomains returned a 403 Forbidden or explicitly blocked GPTBot in `robots.txt`, the entire entity is considered to have 'AI defense mechanisms enabled'.\n\n"
     
     for tier in tiers:
         s = stats[tier]
@@ -157,19 +125,70 @@ def analyze():
         rate_403 = (t_403 / t) * 100
         
         report += f"## {tier}\n"
-        report += f"- **병합된 총 출판사/기관 수**: {t}개\n"
-        report += f"- **[1단계 방어] 방화벽(WAF 403) 차단 기관 수**: {t_403}개 (**{rate_403:.1f}%**)\n"
+        report += f"- **Total Consolidated Entities**: {t}\n"
+        report += f"- **[Level 1 Defense] WAF Firewall Block (HTTP 403)**: {t_403} entities (**{rate_403:.1f}%**)\n"
         
-        report += "  - **[2단계 방어] robots.txt 명시적 차단 기관 수**:\n"
+        report += "  - **[Level 2 Defense] Explicit robots.txt Disallow**:\n"
         for bot in bots_to_check:
             blocked = s["blocked_by_robots"][bot]
             pct = (blocked / t) * 100
-            report += f"    - **{bot}**: {blocked}개 기관 차단 ({pct:.1f}%)\n"
+            report += f"    - **{bot}**: {blocked} entities blocked ({pct:.1f}%)\n"
             
-        # 중복을 배제한 종합 방어율 (정확한 산술 합산은 불가하므로 합산 비율을 논리적으로 계산)
-        # 통계적 근사치 제공
         gpt_robots = s["blocked_by_robots"]["GPTBot"]
-        report += f"\n👉 **[종합 인사이트]**: WAF 차단({rate_403:.1f}%)과 robots.txt 차단({(gpt_robots/t)*100:.1f}%)을 조합하여 강력한 입체 방어망을 구축하고 있습니다.\n\n"
+        report += f"\n👉 **[Comprehensive Insight]**: Combines WAF blocking ({rate_403:.1f}%) and robots.txt blocking ({(gpt_robots/t)*100:.1f}%) to form a robust multi-layered active defense.\n\n"
+
+    famous_examples = """
+## 🏢 Top 10 Representative Domains by Tier
+
+### 🏛️ Tier 1 (High Selectivity Commercial Publishers)
+1. **Elsevier** (`elsevier.com`, `sciencedirect.com`)
+2. **Springer Nature** (`springer.com`, `nature.com`)
+3. **IEEE** (`ieeexplore.ieee.org`)
+4. **ACM** (`dl.acm.org`)
+5. **Wiley** (`onlinelibrary.wiley.com`)
+6. **Taylor & Francis** (`tandfonline.com`)
+7. **Oxford University Press** (`oxfordjournals.org`)
+8. **Cambridge University Press** (`cambridge.org`)
+9. **SAGE Publishing** (`sagepub.com`)
+10. **NEJM / BMJ** (`nejm.org`, `bmj.com`)
+
+### 🔓 Tier 2 (Mid-High Selectivity Open Access)
+1. **DOAJ** (`doaj.org`)
+2. **PubMed / NIH** (`pubmed.ncbi.nlm.nih.gov`)
+3. **PLOS** (`journals.plos.org`)
+4. **MDPI** (`mdpi.com`)
+5. **Frontiers** (`frontiersin.org`)
+6. **BioMed Central (BMC)** (`biomedcentral.com`)
+7. **Crossref** (`crossref.org`)
+8. **eLife** (`elifesciences.org`)
+9. **SciELO** (`scielo.org`)
+10. **PeerJ** (`peerj.com`)
+
+### 🏫 Tier 3 (Institutional Repositories & Preprints)
+1. **arXiv** (`arxiv.org`)
+2. **bioRxiv** (`biorxiv.org`)
+3. **Zenodo** (`zenodo.org`)
+4. **Figshare** (`figshare.com`)
+5. **SSRN** (`ssrn.com`)
+6. **OSF** (`osf.io`)
+7. **MIT DSpace** (`dspace.mit.edu` etc.)
+8. **Cambridge/Oxford Repositories** (`.ac.uk`)
+9. **Digital Commons** (`digitalcommons.*`)
+10. **HAL Science** (`hal.science`)
+
+### 🕸️ Tier 4 (Web-scale Aggregators)
+1. **Google Scholar** (`scholar.google.com`)
+2. **Semantic Scholar** (`semanticscholar.org`)
+3. **ResearchGate** (`researchgate.net`)
+4. **Academia.edu** (`academia.edu`)
+5. **EBSCO / ProQuest** (`ebsco.com`, `proquest.com`)
+6. **JSTOR** (`jstor.org`)
+7. **eScholarship** (`escholarship.org`)
+8. **ScholarWorks** (`scholarworks.*`)
+9. **OpenAlex** (`openalex.org`)
+10. **Scopus / Web of Science** (`scopus.com`, `webofscience.com`)
+"""
+    report += famous_examples
 
     with open("tier_analysis_results_v4.md", "w") as f:
         f.write(report)

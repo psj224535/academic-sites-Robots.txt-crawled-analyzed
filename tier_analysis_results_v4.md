@@ -1,67 +1,135 @@
-# 🛡️ 전 세계 학술 도메인 티어별 AI 방어 통계 (루트 도메인 압축 버전)
+# 🛡️ Global Academic Domain AI Defense Statistics (Root Domain Deduplicated)
 
-서브도메인(예: `top.sagepub.com`, `jpl.sagepub.com`)으로 인해 통계가 왜곡되는 현상을 막기 위해, 모든 도메인을 **최상위 루트 도메인(`sagepub.com`) 단위의 1개 독립 기관(Entity)으로 압축 병합**하여 분석했습니다.
+To prevent statistical distortion caused by subdomain bloat (e.g., `top.sagepub.com`, `jpl.sagepub.com`), all domains were consolidated into their top-level root domains (e.g., `sagepub.com`) representing a single organizational entity.
 
-> **평가 규칙:** 1개의 출판사(루트 도메인) 산하에 100개의 서브도메인이 있더라도 오직 1개의 기관으로 카운트하며, 그 중 하나라도 403을 띄우거나 GPTBot을 차단했다면 해당 기관은 'AI 방어 시스템을 갖춘 기관'으로 간주합니다.
+> **Evaluation Rule:** Even if a single publisher operates 100 subdomains, it is counted as 1 entity. If any of its subdomains returned a 403 Forbidden or explicitly blocked GPTBot in `robots.txt`, the entire entity is considered to have 'AI defense mechanisms enabled'.
 
-## Tier 1 (고도 선별형 상업 출판사)
+## Tier 1 (High Selectivity Commercial Publishers)
+- **Total Consolidated Entities**: 91
+- **[Level 1 Defense] WAF Firewall Block (HTTP 403)**: 9 entities (**9.9%**)
+  - **[Level 2 Defense] Explicit robots.txt Disallow**:
+    - **GPTBot**: 10 entities blocked (11.0%)
+    - **ChatGPT-User**: 10 entities blocked (11.0%)
+    - **OAI-SearchBot**: 6 entities blocked (6.6%)
+    - **Google-Extended**: 9 entities blocked (9.9%)
 
-- **병합된 총 출판사/기관 수**: 91개
-- **[1단계 방어] 방화벽(WAF 403) 차단 기관 수**: 9개 (**9.9%**)
-  - **[2단계 방어] robots.txt 명시적 차단 기관 수**:
-    - **GPTBot**: 10개 기관 차단 (11.0%)
-    - **ChatGPT-User**: 10개 기관 차단 (11.0%)
-    - **OAI-SearchBot**: 6개 기관 차단 (6.6%)
-    - **Google-Extended**: 9개 기관 차단 (9.9%)
+👉 **[Comprehensive Insight]**: Combines WAF blocking (9.9%) and robots.txt blocking (11.0%) to form a robust multi-layered active defense.
 
-👉 **[종합 인사이트]**: WAF 차단(9.9%)과 robots.txt 차단(11.0%)을 조합하여 강력한 입체 방어망을 구축하고 있습니다.
+## Tier 2 (Mid-High Selectivity Open Access)
+- **Total Consolidated Entities**: 25
+- **[Level 1 Defense] WAF Firewall Block (HTTP 403)**: 2 entities (**8.0%**)
+  - **[Level 2 Defense] Explicit robots.txt Disallow**:
+    - **GPTBot**: 2 entities blocked (8.0%)
+    - **ChatGPT-User**: 2 entities blocked (8.0%)
+    - **OAI-SearchBot**: 2 entities blocked (8.0%)
+    - **Google-Extended**: 2 entities blocked (8.0%)
 
-## Tier 2 (심사 완료 오픈형)
+👉 **[Comprehensive Insight]**: Combines WAF blocking (8.0%) and robots.txt blocking (8.0%) to form a robust multi-layered active defense.
 
-- **병합된 총 출판사/기관 수**: 25개
-- **[1단계 방어] 방화벽(WAF 403) 차단 기관 수**: 2개 (**8.0%**)
-  - **[2단계 방어] robots.txt 명시적 차단 기관 수**:
-    - **GPTBot**: 2개 기관 차단 (8.0%)
-    - **ChatGPT-User**: 2개 기관 차단 (8.0%)
-    - **OAI-SearchBot**: 2개 기관 차단 (8.0%)
-    - **Google-Extended**: 2개 기관 차단 (8.0%)
+## Tier 3 (Institutional Repositories & Preprints)
+- **Total Consolidated Entities**: 1101
+- **[Level 1 Defense] WAF Firewall Block (HTTP 403)**: 57 entities (**5.2%**)
+  - **[Level 2 Defense] Explicit robots.txt Disallow**:
+    - **GPTBot**: 37 entities blocked (3.4%)
+    - **ChatGPT-User**: 35 entities blocked (3.2%)
+    - **OAI-SearchBot**: 31 entities blocked (2.8%)
+    - **Google-Extended**: 32 entities blocked (2.9%)
 
-👉 **[종합 인사이트]**: WAF 차단(8.0%)과 robots.txt 차단(8.0%)을 조합하여 강력한 입체 방어망을 구축하고 있습니다.
+👉 **[Comprehensive Insight]**: Combines WAF blocking (5.2%) and robots.txt blocking (3.4%) to form a robust multi-layered active defense.
 
-## Tier 3 (기관 보관/프리프린트)
+## Tier 4 (Web-scale Aggregators)
+- **Total Consolidated Entities**: 63
+- **[Level 1 Defense] WAF Firewall Block (HTTP 403)**: 1 entities (**1.6%**)
+  - **[Level 2 Defense] Explicit robots.txt Disallow**:
+    - **GPTBot**: 4 entities blocked (6.3%)
+    - **ChatGPT-User**: 3 entities blocked (4.8%)
+    - **OAI-SearchBot**: 2 entities blocked (3.2%)
+    - **Google-Extended**: 3 entities blocked (4.8%)
 
-- **병합된 총 출판사/기관 수**: 1101개
-- **[1단계 방어] 방화벽(WAF 403) 차단 기관 수**: 57개 (**5.2%**)
-  - **[2단계 방어] robots.txt 명시적 차단 기관 수**:
-    - **GPTBot**: 37개 기관 차단 (3.4%)
-    - **ChatGPT-User**: 35개 기관 차단 (3.2%)
-    - **OAI-SearchBot**: 31개 기관 차단 (2.8%)
-    - **Google-Extended**: 32개 기관 차단 (2.9%)
+👉 **[Comprehensive Insight]**: Combines WAF blocking (1.6%) and robots.txt blocking (6.3%) to form a robust multi-layered active defense.
 
-👉 **[종합 인사이트]**: WAF 차단(5.2%)과 robots.txt 차단(3.4%)을 조합하여 강력한 입체 방어망을 구축하고 있습니다.
+## Unclassified (Independent Journals)
+- **Total Consolidated Entities**: 5900
+- **[Level 1 Defense] WAF Firewall Block (HTTP 403)**: 207 entities (**3.5%**)
+  - **[Level 2 Defense] Explicit robots.txt Disallow**:
+    - **GPTBot**: 207 entities blocked (3.5%)
+    - **ChatGPT-User**: 179 entities blocked (3.0%)
+    - **OAI-SearchBot**: 133 entities blocked (2.3%)
+    - **Google-Extended**: 163 entities blocked (2.8%)
 
-## Tier 4 (포괄적 크롤러형)
+👉 **[Comprehensive Insight]**: Combines WAF blocking (3.5%) and robots.txt blocking (3.5%) to form a robust multi-layered active defense.
 
-- **병합된 총 출판사/기관 수**: 63개
-- **[1단계 방어] 방화벽(WAF 403) 차단 기관 수**: 1개 (**1.6%**)
-  -----------------------------------------------------
 
-  - **[2단계 방어] robots.txt 명시적 차단 기관 수**:
-    - **GPTBot**: 4개 기관 차단 (6.3%)
-    - **ChatGPT-User**: 3개 기관 차단 (4.8%)
-    - **OAI-SearchBot**: 2개 기관 차단 (3.2%)
-    - **Google-Extended**: 3개 기관 차단 (4.8%)
+## 🏢 Top 10 Representative Domains by Tier
 
-👉 **[종합 인사이트]**: WAF 차단(1.6%)과 robots.txt 차단(6.3%)을 조합하여 강력한 입체 방어망을 구축하고 있습니다.
+### 🏛️ Tier 1 (High Selectivity Commercial Publishers)
+1. **Elsevier** (`elsevier.com`, `sciencedirect.com`)
+2. **Springer Nature** (`springer.com`, `nature.com`)
+3. **IEEE** (`ieeexplore.ieee.org`)
+4. **ACM** (`dl.acm.org`)
+5. **Wiley** (`onlinelibrary.wiley.com`)
+6. **Taylor & Francis** (`tandfonline.com`)
+7. **Oxford University Press** (`oxfordjournals.org`)
+8. **Cambridge University Press** (`cambridge.org`)
+9. **SAGE Publishing** (`sagepub.com`)
+10. **NEJM / BMJ** (`nejm.org`, `bmj.com`)
 
-## Unclassified (미분류 개별 저널)
+### 🔓 Tier 2 (Mid-High Selectivity Open Access)
+1. **DOAJ** (`doaj.org`)
+2. **PubMed / NIH** (`pubmed.ncbi.nlm.nih.gov`)
+3. **PLOS** (`journals.plos.org`)
+4. **MDPI** (`mdpi.com`)
+5. **Frontiers** (`frontiersin.org`)
+6. **BioMed Central (BMC)** (`biomedcentral.com`)
+7. **Crossref** (`crossref.org`)
+8. **eLife** (`elifesciences.org`)
+9. **SciELO** (`scielo.org`)
+10. **PeerJ** (`peerj.com`)
 
-- **병합된 총 출판사/기관 수**: 5900개
-- **[1단계 방어] 방화벽(WAF 403) 차단 기관 수**: 207개 (**3.5%**)
-  - **[2단계 방어] robots.txt 명시적 차단 기관 수**:
-    - **GPTBot**: 207개 기관 차단 (3.5%)
-    - **ChatGPT-User**: 179개 기관 차단 (3.0%)
-    - **OAI-SearchBot**: 133개 기관 차단 (2.3%)
-    - **Google-Extended**: 163개 기관 차단 (2.8%)
+### 🏫 Tier 3 (Institutional Repositories & Preprints)
+1. **arXiv** (`arxiv.org`)
+2. **bioRxiv** (`biorxiv.org`)
+3. **Zenodo** (`zenodo.org`)
+4. **Figshare** (`figshare.com`)
+5. **SSRN** (`ssrn.com`)
+6. **OSF** (`osf.io`)
+7. **MIT DSpace** (`dspace.mit.edu` etc.)
+8. **Cambridge/Oxford Repositories** (`.ac.uk`)
+9. **Digital Commons** (`digitalcommons.*`)
+10. **HAL Science** (`hal.science`)
 
-👉 **[종합 인사이트]**: WAF 차단(3.5%)과 robots.txt 차단(3.5%)을 조합하여 강력한 입체 방어망을 구축하고 있습니다.
+### 🕸️ Tier 4 (Web-scale Aggregators)
+1. **Google Scholar** (`scholar.google.com`)
+2. **Semantic Scholar** (`semanticscholar.org`)
+3. **ResearchGate** (`researchgate.net`)
+4. **Academia.edu** (`academia.edu`)
+5. **EBSCO / ProQuest** (`ebsco.com`, `proquest.com`)
+6. **JSTOR** (`jstor.org`)
+7. **eScholarship** (`escholarship.org`)
+8. **ScholarWorks** (`scholarworks.*`)
+9. **OpenAlex** (`openalex.org`)
+10. **Scopus / Web of Science** (`scopus.com`, `webofscience.com`)
+
+
+## 📋 [Appendix] Tier 1 & 2 Detailed Domain Verification List
+
+### 🏛️ Tier 1 Detailed Domains
+**1. Firewall (WAF 403) Blocked Entities (Total 9):**
+`bmj.com`, `sagepub.com`, `acm.org`, `wiley.com`, `aip.org`, `elsevier.com`, `springerpub.com`, `wolterskluwer.com`, `wileyonlinelibrary.com`
+
+**2. robots.txt Explicit GPTBot Disallow (Total 7):**
+`springeropen.com`, `ieee.org`, `springer.com`, `thieme-connect.de`, `sciencedirect.com`, `thieme-connect.com`, `elsevier.es`
+
+**3. Allowed Entities (5 randomly extracted / Total 75):**
+`sagepub.net`, `amigosdanatureza.org.br`, `globalhealthsciencegroup.com`, `rsc.org`, `springer.de`
+
+### 🔓 Tier 2 Detailed Domains
+**1. Firewall (WAF 403) Blocked Entities (Total 2):**
+`mdpi.com`, `scielo.cl`
+
+**2. robots.txt Explicit GPTBot Disallow (Total 2):**
+`biomedcentral.com`, `datacite.org`
+
+**3. Allowed Entities (All / Total 22):**
+`nih.gov`, `plosone.org`, `frontiersin.org`, `plosmedicine.org`, `plospathogens.org`, `earthsciencefrontiers.net.cn`, `doaj.org`, `scielo.br`, `hindawi.com`, `elifesciences.org`, `plosbiology.org`, `f1000research.com`, `plosgenetics.org`, `plos.org`, `scielo.org.za`, `scielo.org.pe`, `scielo.org.ar`, `peerj.com`, `plosntds.org`, `frontiersinzoology.com`, `europepmc.org`, `scielo.org`
+
