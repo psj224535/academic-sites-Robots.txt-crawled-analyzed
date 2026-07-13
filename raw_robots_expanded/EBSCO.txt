@@ -1,0 +1,41 @@
+# ======================
+# Default Rule: All Bots
+# ======================
+# Applies to ALL user agents not explicitly listed below.
+User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Allow: /
+Allow: /research-starters/
+Allow: /articles/
+Allow: /who-we-are/
+Allow: /terms/
+Disallow: /(authenticated)/
+Disallow: /api/
+Disallow: /(demo)/
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /*.xml$
+ 
+# Blocked Bots - aggressive crawlers and scrapers
+User-agent: AhrefsBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: Scrapy
+Disallow: /
+User-agent: Hatena
+Disallow: /
+User-agent: Grub
+Disallow: /
+ 
+# Research and academic bots (Custom Rules)
+User-agent: ia_archiver
+Allow: /research-starters/
+Allow: /who-we-are/
+Disallow: /(authenticated)/
+Disallow: /api/
+Disallow: /(demo)/
+ 
+Sitemap: https://a101334.sitemaphosting3.com/3981381/sitemap_3981381.xml

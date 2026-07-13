@@ -1,0 +1,67 @@
+{
+    "Elsevier": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.elsevier.com/robots.txt",
+        "status": "success"
+    },
+    "Springer": {
+        "category": "Commercial_Publisher",
+        "url": "https://link.springer.com/robots.txt",
+        "status": "success"
+    },
+    "Wiley": {
+        "category": "Commercial_Publisher",
+        "url": "https://onlinelibrary.wiley.com/robots.txt",
+        "status": "success"
+    },
+    "PLOS": {
+        "category": "Open_Access_Publisher",
+        "url": "https://journals.plos.org/robots.txt",
+        "status": "success"
+    },
+    "MDPI": {
+        "category": "Open_Access_Publisher",
+        "url": "https://www.mdpi.com/robots.txt",
+        "status": "failed: HTTP Error 403: Forbidden"
+    },
+    "ACM": {
+        "category": "Open_Access_Publisher",
+        "url": "https://dl.acm.org/robots.txt",
+        "status": "success"
+    },
+    "PubMed": {
+        "category": "Academic_Database",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/robots.txt",
+        "status": "success"
+    },
+    "Semantic_Scholar": {
+        "category": "Academic_Database",
+        "url": "https://www.semanticscholar.org/robots.txt",
+        "status": "success"
+    },
+    "arXiv": {
+        "category": "Preprint_Repository",
+        "url": "https://arxiv.org/robots.txt",
+        "status": "success"
+    },
+    "bioRxiv": {
+        "category": "Preprint_Repository",
+        "url": "https://www.biorxiv.org/robots.txt",
+        "status": "success"
+    },
+    "Zenodo": {
+        "category": "Preprint_Repository",
+        "url": "https://zenodo.org/robots.txt",
+        "status": "failed: HTTP Error 403: Forbidden"
+    },
+    "ResearchGate": {
+        "category": "Academic_SNS",
+        "url": "https://www.researchgate.net/robots.txt",
+        "status": "success"
+    },
+    "Academia": {
+        "category": "Academic_SNS",
+        "url": "https://www.academia.edu/robots.txt",
+        "status": "success"
+    }
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Crawl-delay: 30
+
+Disallow: */search
+Disallow: */article/metrics
+Disallow: */user
+Sitemap: http://sitemaps.plos.cloud/journals/sitemap-index.xml

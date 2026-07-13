@@ -1,0 +1,212 @@
+{
+    "Elsevier": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.elsevier.com/robots.txt",
+        "status": "success"
+    },
+    "Springer": {
+        "category": "Commercial_Publisher",
+        "url": "https://link.springer.com/robots.txt",
+        "status": "success"
+    },
+    "Wiley": {
+        "category": "Commercial_Publisher",
+        "url": "https://onlinelibrary.wiley.com/robots.txt",
+        "status": "success"
+    },
+    "Taylor_Francis": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.tandfonline.com/robots.txt",
+        "status": "success"
+    },
+    "Sage": {
+        "category": "Commercial_Publisher",
+        "url": "https://journals.sagepub.com/robots.txt",
+        "status": "success"
+    },
+    "OUP": {
+        "category": "Commercial_Publisher",
+        "url": "https://academic.oup.com/robots.txt",
+        "status": "success"
+    },
+    "Cambridge": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.cambridge.org/robots.txt",
+        "status": "success"
+    },
+    "Nature": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.nature.com/robots.txt",
+        "status": "success"
+    },
+    "Science": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.science.org/robots.txt",
+        "status": "success"
+    },
+    "IEEE_Xplore": {
+        "category": "Commercial_Publisher",
+        "url": "https://ieeexplore.ieee.org/robots.txt",
+        "status": "success"
+    },
+    "Emerald": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.emerald.com/robots.txt",
+        "status": "success"
+    },
+    "De_Gruyter": {
+        "category": "Commercial_Publisher",
+        "url": "https://www.degruyter.com/robots.txt",
+        "status": "success"
+    },
+    "PLOS": {
+        "category": "Open_Access_Publisher",
+        "url": "https://journals.plos.org/robots.txt",
+        "status": "success"
+    },
+    "MDPI": {
+        "category": "Open_Access_Publisher",
+        "url": "https://www.mdpi.com/robots.txt",
+        "status": "failed: HTTP Error 403: Forbidden"
+    },
+    "ACM": {
+        "category": "Open_Access_Publisher",
+        "url": "https://dl.acm.org/robots.txt",
+        "status": "success"
+    },
+    "Hindawi": {
+        "category": "Open_Access_Publisher",
+        "url": "https://www.hindawi.com/robots.txt",
+        "status": "success"
+    },
+    "Frontiers": {
+        "category": "Open_Access_Publisher",
+        "url": "https://www.frontiersin.org/robots.txt",
+        "status": "success"
+    },
+    "eLife": {
+        "category": "Open_Access_Publisher",
+        "url": "https://elifesciences.org/robots.txt",
+        "status": "success"
+    },
+    "BMC": {
+        "category": "Open_Access_Publisher",
+        "url": "https://www.biomedcentral.com/robots.txt",
+        "status": "failed: HTTP Error 404: Not Found"
+    },
+    "PeerJ": {
+        "category": "Open_Access_Publisher",
+        "url": "https://peerj.com/robots.txt",
+        "status": "success"
+    },
+    "PubMed": {
+        "category": "Academic_Database",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/robots.txt",
+        "status": "success"
+    },
+    "Semantic_Scholar": {
+        "category": "Academic_Database",
+        "url": "https://www.semanticscholar.org/robots.txt",
+        "status": "success"
+    },
+    "Web_of_Science": {
+        "category": "Academic_Database",
+        "url": "https://www.webofscience.com/robots.txt",
+        "status": "success"
+    },
+    "Scopus": {
+        "category": "Academic_Database",
+        "url": "https://www.scopus.com/robots.txt",
+        "status": "failed: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+    },
+    "Google_Scholar": {
+        "category": "Academic_Database",
+        "url": "https://scholar.google.com/robots.txt",
+        "status": "success"
+    },
+    "JSTOR": {
+        "category": "Academic_Database",
+        "url": "https://www.jstor.org/robots.txt",
+        "status": "success"
+    },
+    "EBSCO": {
+        "category": "Academic_Database",
+        "url": "https://www.ebsco.com/robots.txt",
+        "status": "success"
+    },
+    "ProQuest": {
+        "category": "Academic_Database",
+        "url": "https://www.proquest.com/robots.txt",
+        "status": "success"
+    },
+    "DBLP": {
+        "category": "Academic_Database",
+        "url": "https://dblp.org/robots.txt",
+        "status": "success"
+    },
+    "arXiv": {
+        "category": "Preprint_Repository",
+        "url": "https://arxiv.org/robots.txt",
+        "status": "success"
+    },
+    "bioRxiv": {
+        "category": "Preprint_Repository",
+        "url": "https://www.biorxiv.org/robots.txt",
+        "status": "success"
+    },
+    "medRxiv": {
+        "category": "Preprint_Repository",
+        "url": "https://www.medrxiv.org/robots.txt",
+        "status": "success"
+    },
+    "Zenodo": {
+        "category": "Preprint_Repository",
+        "url": "https://zenodo.org/robots.txt",
+        "status": "failed: HTTP Error 403: Forbidden"
+    },
+    "SSRN": {
+        "category": "Preprint_Repository",
+        "url": "https://papers.ssrn.com/robots.txt",
+        "status": "success"
+    },
+    "OSF": {
+        "category": "Preprint_Repository",
+        "url": "https://osf.io/robots.txt",
+        "status": "success"
+    },
+    "ChemRxiv": {
+        "category": "Preprint_Repository",
+        "url": "https://chemrxiv.org/robots.txt",
+        "status": "success"
+    },
+    "PsyArXiv": {
+        "category": "Preprint_Repository",
+        "url": "https://psyarxiv.com/robots.txt",
+        "status": "success"
+    },
+    "Research_Square": {
+        "category": "Preprint_Repository",
+        "url": "https://www.researchsquare.com/robots.txt",
+        "status": "success"
+    },
+    "ResearchGate": {
+        "category": "Academic_SNS",
+        "url": "https://www.researchgate.net/robots.txt",
+        "status": "success"
+    },
+    "Academia": {
+        "category": "Academic_SNS",
+        "url": "https://www.academia.edu/robots.txt",
+        "status": "success"
+    },
+    "Mendeley": {
+        "category": "Academic_SNS",
+        "url": "https://www.mendeley.com/robots.txt",
+        "status": "success"
+    },
+    "ORCID": {
+        "category": "Academic_SNS",
+        "url": "https://orcid.org/robots.txt",
+        "status": "success"
+    }
+}

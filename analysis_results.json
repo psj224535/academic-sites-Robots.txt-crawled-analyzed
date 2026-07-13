@@ -1,0 +1,343 @@
+[
+    {
+        "platform_name": "Elsevier",
+        "platform_category": "Commercial_Publisher",
+        "default_policy_asterisk": "Allow All",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Not Mentioned",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Not Mentioned"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Not Mentioned",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": false,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": false
+        },
+        "notable_features": "No explicit bot rules found."
+    },
+    {
+        "platform_name": "Springer",
+        "platform_category": "Commercial_Publisher",
+        "default_policy_asterisk": "Disallow All",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Blocked",
+                "ClaudeBot": "Blocked",
+                "CCBot": "Blocked",
+                "Google-Extended": "Blocked"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Blocked"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Blocked",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": true,
+            "is_abstract_blocked": true,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "GPTBot is Blocked, ClaudeBot is Blocked, CCBot is Blocked, Google-Extended is Blocked, PerplexityBot is Blocked, ChatGPT-User is Blocked"
+    },
+    {
+        "platform_name": "Wiley",
+        "platform_category": "Commercial_Publisher",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Blocked",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Blocked"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Not Mentioned",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": true,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "GPTBot is Blocked, Google-Extended is Blocked"
+    },
+    {
+        "platform_name": "PLOS",
+        "platform_category": "Open_Access_Publisher",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Not Mentioned",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Not Mentioned"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Not Mentioned",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": false,
+            "is_abstract_blocked": true,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "No explicit bot rules found."
+    },
+    {
+        "platform_name": "ACM",
+        "platform_category": "Open_Access_Publisher",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Blocked",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Blocked",
+                "Google-Extended": "Blocked"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Blocked",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": false,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "GPTBot is Blocked, CCBot is Blocked, Google-Extended is Blocked, ChatGPT-User is Blocked"
+    },
+    {
+        "platform_name": "PubMed",
+        "platform_category": "Academic_Database",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Not Mentioned",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Not Mentioned"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Not Mentioned",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": true,
+            "is_abstract_blocked": true,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "No explicit bot rules found."
+    },
+    {
+        "platform_name": "Semantic_Scholar",
+        "platform_category": "Academic_Database",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Not Mentioned",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Not Mentioned"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Not Mentioned",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": false,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "No explicit bot rules found."
+    },
+    {
+        "platform_name": "arXiv",
+        "platform_category": "Preprint_Repository",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Not Mentioned",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Not Mentioned"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Not Mentioned",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Partially Blocked"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": false,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "Googlebot is Partially Blocked"
+    },
+    {
+        "platform_name": "bioRxiv",
+        "platform_category": "Preprint_Repository",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Blocked",
+                "ClaudeBot": "Blocked",
+                "CCBot": "Blocked",
+                "Google-Extended": "Not Mentioned"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Blocked"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Blocked",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": false,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "GPTBot is Blocked, ClaudeBot is Blocked, CCBot is Blocked, PerplexityBot is Blocked, ChatGPT-User is Blocked"
+    },
+    {
+        "platform_name": "ResearchGate",
+        "platform_category": "Academic_SNS",
+        "default_policy_asterisk": "Specific Paths Blocked",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Not Mentioned",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Not Mentioned"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Not Mentioned",
+                "Claude-SearchBot": "Not Mentioned",
+                "PerplexityBot": "Not Mentioned"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Not Mentioned",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Not Mentioned"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": true,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": true
+        },
+        "notable_features": "No explicit bot rules found."
+    },
+    {
+        "platform_name": "Academia",
+        "platform_category": "Academic_SNS",
+        "default_policy_asterisk": "Disallow All",
+        "bot_policies": {
+            "training_bots": {
+                "GPTBot": "Blocked",
+                "ClaudeBot": "Not Mentioned",
+                "CCBot": "Not Mentioned",
+                "Google-Extended": "Blocked"
+            },
+            "ai_search_bots": {
+                "OAI-SearchBot": "Partially Blocked",
+                "Claude-SearchBot": "Partially Blocked",
+                "PerplexityBot": "Partially Blocked"
+            },
+            "user_rag_bots": {
+                "ChatGPT-User": "Partially Blocked",
+                "Perplexity-User": "Not Mentioned"
+            },
+            "traditional_bots": {
+                "Googlebot": "Partially Blocked"
+            }
+        },
+        "scope_restrictions": {
+            "is_fulltext_pdf_blocked": false,
+            "is_abstract_blocked": false,
+            "is_internal_search_blocked": false
+        },
+        "notable_features": "GPTBot is Blocked, Google-Extended is Blocked, OAI-SearchBot is Partially Blocked, Claude-SearchBot is Partially Blocked, PerplexityBot is Partially Blocked, ChatGPT-User is Partially Blocked, Googlebot is Partially Blocked"
+    }
+]
